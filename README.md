@@ -30,7 +30,7 @@ This service is intended to be consumed by client applications, but you can inte
 
 ## Architecture
 To have a detailed overview of the system architecture, please visit here.
-![Architecture Diagram](https://raw.githubusercontent.com/username/repository/master/diagram.png)
+![Architecture Diagram]([https://raw.githubusercontent.com/username/repository/master/diagram.png](https://github.com/angeltemelko/Microservice-Store/blob/main/Microservice%20Architechture.drawio%20(1).png)https://github.com/angeltemelko/Microservice-Store/blob/main/Microservice%20Architechture.drawio%20(1).png)
 
 
 
