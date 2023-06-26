@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{D5D15A14-78FE-4441-AC43-AD8F98ED3874}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{5FE8767C-2583-428F-9CAF-64B7C245EF7A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{686035DD-1466-4AB7-A619-51FB8857FD10}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microservices.Services.CouponAPI", "Microservices.Services.CouponAPI\Microservices.Services.CouponAPI.csproj", "{277917FD-5CBC-4CF5-AE70-92896CFE83CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServices.AuthAPI", "MicroServices.AuthAPI\MicroServices.AuthAPI.csproj", "{A62A3048-AC69-4AA1-946A-3E2F4AA9F20A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{277917FD-5CBC-4CF5-AE70-92896CFE83CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{277917FD-5CBC-4CF5-AE70-92896CFE83CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{277917FD-5CBC-4CF5-AE70-92896CFE83CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{277917FD-5CBC-4CF5-AE70-92896CFE83CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A62A3048-AC69-4AA1-946A-3E2F4AA9F20A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A62A3048-AC69-4AA1-946A-3E2F4AA9F20A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A62A3048-AC69-4AA1-946A-3E2F4AA9F20A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A62A3048-AC69-4AA1-946A-3E2F4AA9F20A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{277917FD-5CBC-4CF5-AE70-92896CFE83CD} = {5FE8767C-2583-428F-9CAF-64B7C245EF7A}
+		{A62A3048-AC69-4AA1-946A-3E2F4AA9F20A} = {5FE8767C-2583-428F-9CAF-64B7C245EF7A}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "gy/CEB/U8TN02wKlv5gL0Hqs8p6PVgdVMCbO/umxzB4=",
+  "Source": "MicroServices.AuthAPI",
+  "BasePath": "_content/MicroServices.AuthAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
