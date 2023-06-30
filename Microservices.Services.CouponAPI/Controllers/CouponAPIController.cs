@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Microservices.Services.CouponAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/coupon")]
     [ApiController]
     [Authorize]
     public class CouponAPIController : ControllerBase
@@ -57,6 +57,7 @@ namespace Microservices.Services.CouponAPI.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "ADMIN")]
         public async Task<ActionResult<ResponseDto<CouponDto>>> CreateCoupon([FromBody] CouponDto couponDto)
         {
             ResponseDto<CouponDto> responseDto = new();
@@ -75,6 +76,7 @@ namespace Microservices.Services.CouponAPI.Controllers
         }
 
         [HttpPut("{id:int}")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<ActionResult<ResponseDto<CouponDto>>> UpdateCoupon(int id, [FromBody] CouponDto couponDto)
         {
             ResponseDto<CouponDto> responseDto = new();
@@ -93,6 +95,7 @@ namespace Microservices.Services.CouponAPI.Controllers
         }
 
         [HttpDelete("{id:int}")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<ActionResult<ResponseDto<bool>>> DeleteCoupon(int id)
         {
             ResponseDto<bool> responseDto = new();
@@ -110,7 +113,7 @@ namespace Microservices.Services.CouponAPI.Controllers
             return responseDto;
         }
 
-        [HttpGet("GetByCode/{code}")]
+        [HttpGet("get-by-code/{code}")]
         public async Task<ActionResult<ResponseDto<CouponDto>>> GetCouponByCode(string code)
         {
             ResponseDto<CouponDto> responseDto = new();

@@ -17,6 +17,13 @@ nupkg/
 *.userosscache
 *.sln.docstates
 
+# Ignore all bin directories
+**/bin/
+
+# Ignore all obj directories
+**/obj/
+
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -36,3 +43,7 @@ msbuild.wrn
 # Visual Studio 2015
 .vs/
 
+/MicroServices.AuthAPI/bin/Debug/net7.0/MicroServices.AuthAPI.dll
+/MicroServices.AuthAPI/bin/Debug/net7.0/MicroServices.AuthAPI.pdb
+/MicroServices.AuthAPI/obj/Debug/net7.0/MicroServices.AuthAPI.dll
+/MicroServices.AuthAPI/obj/Debug/net7.0/MicroServices.AuthAPI.pdb

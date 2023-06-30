@@ -1,7 +1,6 @@
 ﻿using Microservices.Services.AuthAPI.Models;
 using MicroServices.AuthAPI.Models.Dtos;
 using MicroServices.AuthAPI.Service.IService;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MicroServices.AuthAPI.Controllers

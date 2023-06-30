@@ -1,9 +1,11 @@
 using AutoMapper;
-using Microservices.Services.CouponAPI.Data;
-using Microservices.Services.CouponAPI.Extensions;
-using Microservices.Services.CouponAPI.Mappings;
-using Microservices.Services.ProductAPI.Repositories;
-using Microservices.Services.ProductAPI.Repositories.Interfaces;
+using Microservices.MessageBus;
+using Microservices.ShoppingCartAPI.Data;
+using Microservices.ShoppingCartAPI.Extensions;
+using Microservices.ShoppingCartAPI.Mappings;
+using Microservices.ShoppingCartAPI.Service;
+using Microservices.ShoppingCartAPI.Service.Interfaces;
+using Microservices.ShoppingCartAPI.Utility;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -21,7 +23,27 @@ builder.Services.AddDbContext<AppDbContext>(option =>
 builder.Services.AddEndpointsApiExplorer();
 IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
 builder.Services.AddSingleton(mapper);
-builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<ICartDetailsService, CartDetailsService>();
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<ICouponService, CouponService>();
+builder.Services.AddScoped<IMessageBus,MessageBus>();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<BackendApiAuthenticationHttpClientHandler>();
+
+builder.Services
+    .AddHttpClient("Product",
+        u => u.BaseAddress = new Uri(builder.Configuration["ServiceUrls:ProductAPI"] ?? string.Empty))
+    .AddHttpMessageHandler<BackendApiAuthenticationHttpClientHandler>();
+builder.Services
+    .AddHttpClient("Coupon",
+        u => u.BaseAddress = new Uri(builder.Configuration["ServiceUrls:CouponAPI"] ?? string.Empty))
+    .AddHttpMessageHandler<BackendApiAuthenticationHttpClientHandler>();
+
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
